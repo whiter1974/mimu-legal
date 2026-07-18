@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>使い方ガイド — Mimu</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+  :root{
+    --bg:#0C0D0F; --bg2:#121416; --teal:#27D6B0; --cream:#FFFBF5; --sub:#9AA0A6; --line:#23262b;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--cream);
+    font-family:'Inter',-apple-system,'Hiragino Sans',sans-serif; line-height:1.8;
+  }
+  header{ padding:32px 24px 24px; border-bottom:1px solid var(--line); }
+  .mark{ display:flex; align-items:center; gap:16px; max-width:720px; margin:0 auto; }
+  .bars{ display:flex; gap:4px; }
+  .bar{ width:6px; border-radius:3px; background:var(--teal); }
+  .wordmark{ font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; }
+  main{ max-width:720px; margin:0 auto; padding:40px 24px 80px; }
+  h1{ font-family:'Poppins',sans-serif; font-size:28px; margin-bottom:4px; }
+  .updated{ color:var(--sub); font-size:13px; margin-bottom:16px; }
+  .lead{ color:#D9DBDD; font-size:15px; margin-bottom:40px; }
+  .step{ margin-top:44px; padding-top:4px; }
+  .step-num{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:26px; height:26px; border-radius:8px; background:rgba(39,214,176,0.15);
+    color:var(--teal); font-family:'Poppins',sans-serif; font-weight:700; font-size:13px;
+    margin-right:10px; vertical-align:middle;
+  }
+  h2{ font-size:19px; margin-top:0; margin-bottom:14px; font-weight:600; display:flex; align-items:center; }
+  p, li{ color:#D9DBDD; font-size:15px; }
+  ul{ padding-left:20px; }
+  li{ margin-bottom:6px; }
+  a{ color:var(--teal); }
+  .tag{
+    display:inline-block; font-size:12px; color:var(--teal); border:1px solid rgba(39,214,176,0.35);
+    border-radius:999px; padding:2px 10px; margin-bottom:10px;
+  }
+  .backlink{ display:inline-block; margin-top:56px; color:var(--sub); font-size:13px; text-decoration:none; }
+  .backlink:hover{ color:var(--teal); }
+  strong{ color:var(--cream); }
+  .note{
+    margin-top:16px; padding:14px 16px; background:var(--bg2); border-radius:10px;
+    font-size:13.5px; color:var(--sub); border:1px solid var(--line);
+  }
+  .shots{ display:flex; gap:14px; margin-top:20px; flex-wrap:wrap; }
+  figure{ margin:0; flex:1; min-width:160px; max-width:240px; }
+  figure img{ width:100%; display:block; border-radius:14px; border:1px solid var(--line); }
+  figcaption{ margin-top:8px; font-size:12.5px; color:var(--sub); text-align:center; }
+</style>
+</head>
+<body>
+<header>
+  <div class="mark">
+    <div class="bars">
+      <div class="bar" style="height:10px;"></div>
+      <div class="bar" style="height:20px;"></div>
+      <div class="bar" style="height:7px;"></div>
+      <div class="bar" style="height:20px;"></div>
+      <div class="bar" style="height:10px;"></div>
+    </div>
+    <div class="wordmark">mimu</div>
+  </div>
+</header>
+<main>
+  <h1>使い方ガイド</h1>
+  <p class="updated">最終更新日: 2026年7月19日</p>
+  <p class="lead">Mimuは、楽器の練習を録音・再生しながら振り返るためのアプリです。画面下部の4つのタブ(録音・伴奏ライブラリ・一覧・設定)を使って練習を記録していきます。</p>
+
+  <div class="step">
+    <h2><span class="step-num">1</span>録音する</h2>
+    <p>「録音」タブでは、伴奏の種類を3つから選べます。</p>
+    <ul>
+      <li><strong>伴奏</strong>: 曲を選び、再生速度を調整しながら一緒に演奏を録音できます</li>
+      <li><strong>メトロノーム</strong>: BPMと拍子(1/4〜12/8まで多数対応)を設定し、クリック音に合わせて録音できます。「プレビューを再生」で事前に音を確認できます</li>
+      <li><strong>なし</strong>: 伴奏なしで、演奏そのものだけを録音します</li>
+    </ul>
+    <p>画面下部には使用中のマイク(本体マイクなど)が表示されます。さらに、演奏中の音程をリアルタイムに検出して「C4」「E4」のように表示する<strong>チューナー機能</strong>もあります(基準ピッチ A = 440Hz)。丸い録音ボタンをタップすると録音が始まります。</p>
+    <div class="shots">
+      <figure><img src="images/shot-record-metronome.png" alt="メトロノームモードの録音画面"><figcaption>メトロノームモード</figcaption></figure>
+      <figure><img src="images/shot-record-accompaniment.png" alt="伴奏モードの録音画面"><figcaption>伴奏モード</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="step">
+    <h2><span class="step-num">2</span>演奏を確認する</h2>
+    <p>録音が終わると、確認画面が表示されます。</p>
+    <ul>
+      <li>「伴奏」と「演奏」それぞれの波形が表示され、見比べることができます</li>
+      <li>再生ボタンで確認しながら、前後5秒スキップできます</li>
+      <li><strong>ズレ補正</strong>: 伴奏と自分の演奏のタイミングのズレを、自動補正値をベースに手動でも(-10/-1/+1/+10ms単位で)微調整できます。演奏が遅れて聞こえる場合は+側に調整してください。「戻す」で自動補正値に戻せます</li>
+      <li><strong>詳細情報</strong>: 出力/入力レイテンシ、手動オフセット、TimePitch遅延、再生レートなど、より詳しい技術情報も確認できます</li>
+      <li><strong>音質調整(EQ)</strong>: 低域・中域・高域を個別に調整できます。録音がこもって聞こえる場合、低域を下げる・高域を上げると抜けが良くなります</li>
+      <li><strong>リバーブ</strong>・<strong>伴奏の音量</strong>・<strong>演奏の音量</strong>もこの画面で調整できます</li>
+      <li>問題なければ「保存する」、やり直す場合は「破棄」を選びます</li>
+    </ul>
+    <div class="shots">
+      <figure><img src="images/shot-review-main.png" alt="確認画面(波形とズレ補正)"><figcaption>波形の比較・ズレ補正</figcaption></figure>
+      <figure><img src="images/shot-review-eq.png" alt="確認画面(EQ調整)"><figcaption>EQ・リバーブ・音量調整</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="step">
+    <h2><span class="step-num">3</span>伴奏ライブラリ</h2>
+    <p>練習に使いたい伴奏音源を、自分で追加・管理できるタブです。</p>
+    <ul>
+      <li>「アルバム」「プレイリスト」「全曲」の3つのサブタブで構成されています</li>
+      <li>いずれのタブでも曲を検索できます</li>
+      <li>右上のボタンから曲を取り込めます。端末の「ファイル」アプリや「ミュージック」アプリから音源を追加できます</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h2><span class="step-num">4</span>録音一覧</h2>
+    <p>これまでに録音した演奏を一覧で確認・再生できます。過去の練習を振り返りたいときに使ってください。</p>
+  </div>
+
+  <div class="step">
+    <h2><span class="step-num">5</span>設定</h2>
+    <p>録音のたびに毎回調整しなくて済むよう、確認画面で使う各種数値の<strong>初期値(デフォルト)</strong>をここでまとめて設定できます。</p>
+    <ul>
+      <li><strong>ズレ補正の初期値</strong>(デフォルト0ms、-10/-1/+1/+10で調整可能)。ここで設定した値が、次回録音時の初期ズレ補正として使われます。なお確認画面での調整はその都度のもので、ここには反映されません</li>
+      <li><strong>リバーブの初期値</strong></li>
+      <li><strong>デフォルト音量</strong>(伴奏・演奏それぞれ)</li>
+      <li><strong>音質(EQ)の初期値</strong>(低域・中域・高域)</li>
+    </ul>
+    <div class="note">「すべてデフォルトに戻す」から、これらをまとめてリセットすることもできます。</div>
+    <div class="shots">
+      <figure><img src="images/shot-settings-main.png" alt="設定画面"><figcaption>設定タブ</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="step">
+    <h2><span class="step-num">6</span>フィードバックを送る</h2>
+    <p>TestFlightアプリ内のフィードバック機能から、気づいた点やバグをスクリーンショット付きで送ることができます。うまく動かない場合や、直接連絡したい場合は下記までご連絡ください。</p>
+    <ul>
+      <li>連絡先: <a href="mailto:whiter.apps@proton.me">whiter.apps@proton.me</a></li>
+    </ul>
+  </div>
+
+  <a class="backlink" href="index.html">← トップに戻る</a>
+</main>
+</body>
+</html>

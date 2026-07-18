@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Guide — Mimu</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+  :root{
+    --bg:#0C0D0F; --bg2:#121416; --teal:#27D6B0; --cream:#FFFBF5; --sub:#9AA0A6; --line:#23262b;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--cream);
+    font-family:'Inter',-apple-system,sans-serif; line-height:1.8;
+  }
+  header{ padding:32px 24px 24px; border-bottom:1px solid var(--line); }
+  .mark{ display:flex; align-items:center; gap:16px; max-width:720px; margin:0 auto; }
+  .bars{ display:flex; gap:4px; }
+  .bar{ width:6px; border-radius:3px; background:var(--teal); }
+  .wordmark{ font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; }
+  main{ max-width:720px; margin:0 auto; padding:40px 24px 80px; }
+  h1{ font-family:'Poppins',sans-serif; font-size:28px; margin-bottom:4px; }
+  .updated{ color:var(--sub); font-size:13px; margin-bottom:16px; }
+  .lead{ color:#D9DBDD; font-size:15px; margin-bottom:40px; }
+  .step{ margin-top:44px; padding-top:4px; }
+  .step-num{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:26px; height:26px; border-radius:8px; background:rgba(39,214,176,0.15);
+    color:var(--teal); font-family:'Poppins',sans-serif; font-weight:700; font-size:13px;
+    margin-right:10px; vertical-align:middle;
+  }
+  h2{ font-size:19px; margin-top:0; margin-bottom:14px; font-weight:600; display:flex; align-items:center; }
+  p, li{ color:#D9DBDD; font-size:15px; }
+  ul{ padding-left:20px; }
+  li{ margin-bottom:6px; }
+  a{ color:var(--teal); }
+  .backlink{ display:inline-block; margin-top:56px; color:var(--sub); font-size:13px; text-decoration:none; }
+  .backlink:hover{ color:var(--teal); }
+  strong{ color:var(--cream); }
+  .note{
+    margin-top:16px; padding:14px 16px; background:var(--bg2); border-radius:10px;
+    font-size:13.5px; color:var(--sub); border:1px solid var(--line);
+  }
+  .shots{ display:flex; gap:14px; margin-top:20px; flex-wrap:wrap; }
+  figure{ margin:0; flex:1; min-width:160px; max-width:240px; }
+  figure img{ width:100%; display:block; border-radius:14px; border:1px solid var(--line); }
+  figcaption{ margin-top:8px; font-size:12.5px; color:var(--sub); text-align:center; }
+</style>
+</head>
+<body>
+<header>
+  <div class="mark">
+    <div class="bars">
+      <div class="bar" style="height:10px;"></div>
+      <div class="bar" style="height:20px;"></div>
+      <div class="bar" style="height:7px;"></div>
+      <div class="bar" style="height:20px;"></div>
+      <div class="bar" style="height:10px;"></div>
+    </div>
+    <div class="wordmark">mimu</div>
+  </div>
+</header>
+<main>
+  <h1>User Guide</h1>
+  <p class="updated">Last updated: July 19, 2026</p>
+  <p class="lead">Mimu helps you practice an instrument by recording yourself, listening back, and refining your performance. Use the four tabs at the bottom of the screen — Record, Accompaniment Library, List, and Settings — to build your practice routine.</p>
+
+  <div class="step">
+    <h2><span class="step-num">1</span>Recording</h2>
+    <p>The "Record" tab lets you choose from three backing modes.</p>
+    <ul>
+      <li><strong>Accompaniment</strong>: pick a track and adjust its playback speed while you record along with it</li>
+      <li><strong>Metronome</strong>: set a BPM and time signature (a wide range from 1/4 to 12/8 is supported) and record along with a click track. Use "Play Preview" to hear it before you start</li>
+      <li><strong>None</strong>: record just your performance, with no backing track</li>
+    </ul>
+    <p>The active microphone (such as the built-in mic) is shown at the bottom of the screen, along with a <strong>real-time tuner</strong> that detects the pitch of your playing and displays it as a note name (like "C4" or "E4"), referenced to A = 440Hz. Tap the round button to start recording.</p>
+    <div class="shots">
+      <figure><img src="images/shot-record-metronome.png" alt="Recording screen in metronome mode"><figcaption>Metronome mode</figcaption></figure>
+      <figure><img src="images/shot-record-accompaniment.png" alt="Recording screen in accompaniment mode"><figcaption>Accompaniment mode</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="step">
+    <h2><span class="step-num">2</span>Reviewing Your Take</h2>
+    <p>Once you stop recording, you'll land on the review screen.</p>
+    <ul>
+      <li>Both the "Accompaniment" and "Performance" waveforms are shown so you can compare them visually</li>
+      <li>Play back your take with 5-second skip controls</li>
+      <li><strong>Timing correction</strong>: fine-tune the offset between the accompaniment and your recording, starting from an auto-detected value and adjusting manually in -10/-1/+1/+10 ms steps. If your performance sounds delayed, adjust toward +. Tap "Revert" to go back to the auto-detected value</li>
+      <li><strong>Details</strong>: view deeper technical info, including output/input latency, manual offset, TimePitch delay, and playback rate</li>
+      <li><strong>EQ</strong>: adjust low, mid, and high bands independently. If a recording sounds muffled, try lowering the low band or boosting the high band for more clarity</li>
+      <li>You can also adjust <strong>reverb</strong>, <strong>accompaniment volume</strong>, and <strong>performance volume</strong> on this screen</li>
+      <li>Tap "Save" to keep the take, or "Discard" to try again</li>
+    </ul>
+    <div class="shots">
+      <figure><img src="images/shot-review-main.png" alt="Review screen with waveform and timing correction"><figcaption>Waveform comparison & timing</figcaption></figure>
+      <figure><img src="images/shot-review-eq.png" alt="Review screen with EQ adjustment"><figcaption>EQ, reverb & volume</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="step">
+    <h2><span class="step-num">3</span>Accompaniment Library</h2>
+    <p>Add and manage your own accompaniment tracks here.</p>
+    <ul>
+      <li>Organized into three sub-tabs: "Albums," "Playlists," and "All Songs"</li>
+      <li>Every sub-tab is searchable</li>
+      <li>Use the button in the top-right corner to import tracks — you can add audio from your device's Files app or Music app</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h2><span class="step-num">4</span>Recording List</h2>
+    <p>Browse and play back all your saved recordings — useful for reviewing your practice history over time.</p>
+  </div>
+
+  <div class="step">
+    <h2><span class="step-num">5</span>Settings</h2>
+    <p>Set <strong>default values</strong> for the adjustments you make on the review screen, so you don't have to tweak them every time.</p>
+    <ul>
+      <li><strong>Default timing correction</strong> (0 ms by default, adjustable in -10/-1/+1/+10 ms steps). This value is applied as the starting offset for your next recording — adjustments made on the review screen are one-off and aren't saved here</li>
+      <li><strong>Default reverb level</strong></li>
+      <li><strong>Default volume levels</strong> (accompaniment and performance)</li>
+      <li><strong>Default EQ settings</strong> (low, mid, and high bands)</li>
+    </ul>
+    <div class="note">Use "Reset All to Default" to reset all of these at once.</div>
+    <div class="shots">
+      <figure><img src="images/shot-settings-main.png" alt="Settings screen"><figcaption>Settings tab</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="step">
+    <h2><span class="step-num">6</span>Send Feedback</h2>
+    <p>You can send feedback, including screenshots, directly from the TestFlight app. If something isn't working, or you'd like to reach out directly, contact:</p>
+    <ul>
+      <li><a href="mailto:whiter.apps@proton.me">whiter.apps@proton.me</a></li>
+    </ul>
+  </div>
+
+  <a class="backlink" href="index.html">← Back to top</a>
+</main>
+</body>
+</html>
