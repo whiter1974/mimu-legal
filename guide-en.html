@@ -42,6 +42,12 @@
     margin-top:16px; padding:14px 16px; background:var(--bg2); border-radius:10px;
     font-size:13.5px; color:var(--sub); border:1px solid var(--line);
   }
+  .contactbtn{
+    display:inline-block; margin-top:8px; padding:14px 20px; border-radius:12px;
+    border:1px solid var(--line); background:var(--bg2); color:var(--cream);
+    text-decoration:none; font-weight:600; font-size:14px; transition:border-color .15s ease;
+  }
+  .contactbtn:hover{ border-color:var(--teal); }
   .shots{ display:flex; gap:14px; margin-top:20px; flex-wrap:wrap; }
   figure{ margin:0; flex:1; min-width:160px; max-width:240px; }
   figure img{ width:100%; display:block; border-radius:14px; border:1px solid var(--line); }
@@ -63,7 +69,7 @@
 </header>
 <main>
   <h1>User Guide</h1>
-  <p class="updated">Last updated: July 19, 2026</p>
+  <p class="updated">Last updated: August 12, 2026</p>
   <p class="lead">Mimu helps you practice an instrument by recording yourself, listening back, and refining your performance. Use the four tabs at the bottom of the screen — Record, Accompaniment Library, List, and Settings — to build your practice routine.</p>
 
   <div class="step">
@@ -75,9 +81,11 @@
       <li><strong>None</strong>: record just your performance, with no backing track</li>
     </ul>
     <p>The active microphone (such as the built-in mic) is shown at the bottom of the screen, along with a <strong>real-time tuner</strong> that detects the pitch of your playing and displays it as a note name (like "C4" or "E4"), referenced to A = 440Hz. Tap the round button to start recording.</p>
+    <p><strong>Partial Practice</strong>: when you pick a track in Accompaniment mode, a toggle appears — turn it on to show a waveform where you can set point A and point B, then loop that section while you practice. You can also jump forward/back 5 seconds with the skip buttons.</p>
     <div class="shots">
       <figure><img src="images/shot-record-metronome.png" alt="Recording screen in metronome mode"><figcaption>Metronome mode</figcaption></figure>
       <figure><img src="images/shot-record-accompaniment.png" alt="Recording screen in accompaniment mode"><figcaption>Accompaniment mode</figcaption></figure>
+      <figure><img src="images/shot-practice-loop.png" alt="Partial practice (A-B loop) screen"><figcaption>Partial practice (A-B loop)</figcaption></figure>
     </div>
   </div>
 
@@ -89,8 +97,8 @@
       <li>Play back your take with 5-second skip controls</li>
       <li><strong>Timing correction</strong>: fine-tune the offset between the accompaniment and your recording, starting from an auto-detected value and adjusting manually in -10/-1/+1/+10 ms steps. If your performance sounds delayed, adjust toward +. Tap "Revert" to go back to the auto-detected value</li>
       <li><strong>Details</strong>: view deeper technical info, including output/input latency, manual offset, TimePitch delay, and playback rate</li>
-      <li><strong>EQ</strong>: adjust low, mid, and high bands independently. If a recording sounds muffled, try lowering the low band or boosting the high band for more clarity</li>
-      <li>You can also adjust <strong>reverb</strong>, <strong>accompaniment volume</strong>, and <strong>performance volume</strong> on this screen</li>
+      <li><strong>EQ</strong>: adjust low, mid, and high bands independently. If a recording sounds muffled, try lowering the low band or boosting the high band for more clarity (the low and high bands require Mimu Pro; the mid band is available on the free tier)</li>
+      <li><strong>Reverb</strong>: pick a type (Room/Hall/Plate) from the segmented control and adjust the intensity with the slider. You can also adjust <strong>accompaniment volume</strong> and <strong>performance volume</strong> on this screen</li>
       <li>Tap "Save" to keep the take, or "Discard" to try again</li>
     </ul>
     <div class="shots">
@@ -105,13 +113,24 @@
     <ul>
       <li>Organized into three sub-tabs: "Albums," "Playlists," and "All Songs"</li>
       <li>Every sub-tab is searchable</li>
-      <li>Use the button in the top-right corner to import tracks — you can add audio from your device's Files app or Music app</li>
+      <li>Use the button in the top-right corner to import tracks — you can add audio from your device's Files app or Music app (MP4 files are supported for audio-only import; files that contain video cannot be imported)</li>
+      <li>If an import fails, the reason is shown — such as DRM protection, an iCloud file that hasn't been downloaded, or a general read failure</li>
     </ul>
   </div>
 
   <div class="step">
     <h2><span class="step-num">4</span>Recording List</h2>
     <p>Browse and play back all your saved recordings — useful for reviewing your practice history over time.</p>
+    <ul>
+      <li>While something is playing, a <strong>mini player</strong> stays docked at the bottom of the screen, even if you switch tabs. It shows elapsed/total time and has 5-second skip controls</li>
+      <li>Tap the star on any row to mark it as a <strong>favorite</strong>, and use the star button in the navigation bar to filter to favorites only</li>
+      <li>Swipe a row left to reveal "Rename," "Delete," and "Share"</li>
+      <li>While a recording is playing, tap "Record With This Track" to use it as the backing track for your next recording</li>
+    </ul>
+    <div class="shots">
+      <figure><img src="images/shot-library-favorites-rename.png" alt="Favorites and rename controls"><figcaption>Favorites & rename</figcaption></figure>
+      <figure><img src="images/shot-library-miniplayer.png" alt="Mini player and Record With This Track button"><figcaption>Mini player</figcaption></figure>
+    </div>
   </div>
 
   <div class="step">
@@ -130,11 +149,17 @@
   </div>
 
   <div class="step">
-    <h2><span class="step-num">6</span>Send Feedback</h2>
-    <p>You can send feedback, including screenshots, directly from the TestFlight app. If something isn't working, or you'd like to reach out directly, contact:</p>
-    <ul>
-      <li><a href="mailto:whiter.apps@proton.me">whiter.apps@proton.me</a></li>
-    </ul>
+    <h2><span class="step-num">6</span>Mimu Pro</h2>
+    <p>The free tier limits you to saving 5 recordings. Upgrading to <strong>Mimu Pro</strong> removes that limit and unlocks the low and high EQ bands. It's a one-time purchase, not a subscription. You can buy or restore it from the "Upgrade to Mimu Pro" button at the top of the Settings tab.</p>
+    <div class="shots">
+      <figure><img src="images/shot-paywall.png" alt="Mimu Pro upgrade screen"><figcaption>Mimu Pro</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="step">
+    <h2><span class="step-num">7</span>Contact</h2>
+    <p>If you notice anything confusing about how the app works, or run into a bug, please reach out.</p>
+    <a class="contactbtn" href="mailto:whiter.apps@proton.me?subject=Mimu%20Feedback">✉️ Send Feedback</a>
   </div>
 
   <a class="backlink" href="index.html">← Back to top</a>
