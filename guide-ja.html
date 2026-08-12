@@ -46,6 +46,12 @@
     margin-top:16px; padding:14px 16px; background:var(--bg2); border-radius:10px;
     font-size:13.5px; color:var(--sub); border:1px solid var(--line);
   }
+  .contactbtn{
+    display:inline-block; margin-top:8px; padding:14px 20px; border-radius:12px;
+    border:1px solid var(--line); background:var(--bg2); color:var(--cream);
+    text-decoration:none; font-weight:600; font-size:14px; transition:border-color .15s ease;
+  }
+  .contactbtn:hover{ border-color:var(--teal); }
   .shots{ display:flex; gap:14px; margin-top:20px; flex-wrap:wrap; }
   figure{ margin:0; flex:1; min-width:160px; max-width:240px; }
   figure img{ width:100%; display:block; border-radius:14px; border:1px solid var(--line); }
@@ -67,7 +73,7 @@
 </header>
 <main>
   <h1>使い方ガイド</h1>
-  <p class="updated">最終更新日: 2026年7月19日</p>
+  <p class="updated">最終更新日: 2026年8月12日</p>
   <p class="lead">Mimuは、楽器の練習を録音・再生しながら振り返るためのアプリです。画面下部の4つのタブ(録音・伴奏ライブラリ・一覧・設定)を使って練習を記録していきます。</p>
 
   <div class="step">
@@ -79,9 +85,11 @@
       <li><strong>なし</strong>: 伴奏なしで、演奏そのものだけを録音します</li>
     </ul>
     <p>画面下部には使用中のマイク(本体マイクなど)が表示されます。さらに、演奏中の音程をリアルタイムに検出して「C4」「E4」のように表示する<strong>チューナー機能</strong>もあります(基準ピッチ A = 440Hz)。丸い録音ボタンをタップすると録音が始まります。</p>
+    <p><strong>部分練習</strong>: 伴奏モードで曲を選ぶとトグルが表示され、ONにすると波形上でA地点・B地点を指定してその区間だけをループ再生しながら練習できます。5秒進む/戻るボタンで前後に移動することもできます。</p>
     <div class="shots">
       <figure><img src="images/shot-record-metronome.png" alt="メトロノームモードの録音画面"><figcaption>メトロノームモード</figcaption></figure>
       <figure><img src="images/shot-record-accompaniment.png" alt="伴奏モードの録音画面"><figcaption>伴奏モード</figcaption></figure>
+      <figure><img src="images/shot-practice-loop.png" alt="部分練習(A-Bループ)の画面"><figcaption>部分練習(A-Bループ)</figcaption></figure>
     </div>
   </div>
 
@@ -93,8 +101,8 @@
       <li>再生ボタンで確認しながら、前後5秒スキップできます</li>
       <li><strong>ズレ補正</strong>: 伴奏と自分の演奏のタイミングのズレを、自動補正値をベースに手動でも(-10/-1/+1/+10ms単位で)微調整できます。演奏が遅れて聞こえる場合は+側に調整してください。「戻す」で自動補正値に戻せます</li>
       <li><strong>詳細情報</strong>: 出力/入力レイテンシ、手動オフセット、TimePitch遅延、再生レートなど、より詳しい技術情報も確認できます</li>
-      <li><strong>音質調整(EQ)</strong>: 低域・中域・高域を個別に調整できます。録音がこもって聞こえる場合、低域を下げる・高域を上げると抜けが良くなります</li>
-      <li><strong>リバーブ</strong>・<strong>伴奏の音量</strong>・<strong>演奏の音量</strong>もこの画面で調整できます</li>
+      <li><strong>音質調整(EQ)</strong>: 低域・中域・高域を個別に調整できます。録音がこもって聞こえる場合、低域を下げる・高域を上げると抜けが良くなります(低域・高域の調整はMimu Pro限定、中域は無料版でも調整可能です)</li>
+      <li><strong>リバーブ</strong>: 種類(ルーム/ホール/プレート)をセグメントで選び、強度をスライダーで調整できます。<strong>伴奏の音量</strong>・<strong>演奏の音量</strong>もこの画面で調整できます</li>
       <li>問題なければ「保存する」、やり直す場合は「破棄」を選びます</li>
     </ul>
     <div class="shots">
@@ -109,13 +117,24 @@
     <ul>
       <li>「アルバム」「プレイリスト」「全曲」の3つのサブタブで構成されています</li>
       <li>いずれのタブでも曲を検索できます</li>
-      <li>右上のボタンから曲を取り込めます。端末の「ファイル」アプリや「ミュージック」アプリから音源を追加できます</li>
+      <li>右上のボタンから曲を取り込めます。端末の「ファイル」アプリや「ミュージック」アプリから音源を追加できます(mp4ファイルは音声のみ取り込み可能で、映像を含む場合は取り込めません)</li>
+      <li>取り込みに失敗した場合は、DRM保護・iCloud未ダウンロード・読み込み失敗など理由が表示されます</li>
     </ul>
   </div>
 
   <div class="step">
     <h2><span class="step-num">4</span>録音一覧</h2>
     <p>これまでに録音した演奏を一覧で確認・再生できます。過去の練習を振り返りたいときに使ってください。</p>
+    <ul>
+      <li>再生中は画面下部に<strong>ミニプレイヤー</strong>が表示され、他のタブに移動しても再生が続きます。経過/総時間の表示や、5秒進む/戻るボタンも使えます</li>
+      <li>各行の★ボタンで<strong>お気に入り</strong>登録でき、ナビゲーションバーの★ボタンでお気に入りだけに絞り込めます</li>
+      <li>行を左にスワイプすると「名前を変更」「削除」「共有」を選べます</li>
+      <li>再生中に表示される「この曲で録音」ボタンから、その録音を次の録音の伴奏として使うこともできます</li>
+    </ul>
+    <div class="shots">
+      <figure><img src="images/shot-library-favorites-rename.png" alt="お気に入りとリネームの操作画面"><figcaption>お気に入り・名前変更</figcaption></figure>
+      <figure><img src="images/shot-library-miniplayer.png" alt="ミニプレイヤーとこの曲で録音ボタン"><figcaption>ミニプレイヤー</figcaption></figure>
+    </div>
   </div>
 
   <div class="step">
@@ -134,11 +153,17 @@
   </div>
 
   <div class="step">
-    <h2><span class="step-num">6</span>フィードバックを送る</h2>
-    <p>TestFlightアプリ内のフィードバック機能から、気づいた点やバグをスクリーンショット付きで送ることができます。うまく動かない場合や、直接連絡したい場合は下記までご連絡ください。</p>
-    <ul>
-      <li>連絡先: <a href="mailto:whiter.apps@proton.me">whiter.apps@proton.me</a></li>
-    </ul>
+    <h2><span class="step-num">6</span>Mimu Pro</h2>
+    <p>無料版では録音の保存件数が5件までに制限されます。<strong>Mimu Pro</strong>にアップグレードすると、保存件数が無制限になり、音質調整(EQ)の低域・高域も調整できるようになります。買い切り購入で、サブスクリプションではありません。設定タブ最上部の「Mimu Proにアップグレード」から購入・復元できます。</p>
+    <div class="shots">
+      <figure><img src="images/shot-paywall.png" alt="Mimu Proのアップグレード画面"><figcaption>Mimu Pro</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="step">
+    <h2><span class="step-num">7</span>お問い合わせ</h2>
+    <p>アプリの使い方で気づいた点や、不具合を見つけた場合は下記からご連絡ください。</p>
+    <a class="contactbtn" href="mailto:whiter.apps@proton.me?subject=Mimu%E3%83%95%E3%82%A3%E3%83%BC%E3%83%89%E3%83%90%E3%83%83%E3%82%AF">✉️ お問い合わせを送る</a>
   </div>
 
   <a class="backlink" href="index.html">← トップに戻る</a>
