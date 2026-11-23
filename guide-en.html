@@ -69,7 +69,7 @@
 </header>
 <main>
   <h1>User Guide</h1>
-  <p class="updated">Last updated: October 31, 2026</p>
+  <p class="updated">Last updated: November 24, 2026</p>
   <p class="lead">Mimu helps you practice an instrument by recording yourself, listening back, and refining your performance. Use the four tabs at the bottom of the screen — Record, Accompaniment Library, List, and Settings — to build your practice routine.</p>
 
   <div class="step">
@@ -77,17 +77,24 @@
     <p>The "Record" tab lets you choose from three backing modes.</p>
     <ul>
       <li><strong>Accompaniment</strong>: pick a track and adjust its playback speed while you record along with it (Apple Music songs work too — see section 4)</li>
-      <li><strong>Metronome</strong>: set a BPM and time signature (a wide range from 1/4 to 12/8 is supported) and record along with a click track. Use "Play Preview" to hear it before you start</li>
+      <li><strong>Metronome</strong>: set a BPM and time signature (a wide range from 1/4 to 12/8 is supported) and record along with a click track. Use "Play Preview" to hear it before you start. The screen stays on while the metronome is playing</li>
       <li><strong>None</strong>: record just your performance, with no backing track</li>
     </ul>
     <p>The active microphone (such as the built-in mic) is shown at the bottom of the screen. Tap the round button to start recording. Mimu records with your device's built-in mic, so we recommend listening to the backing track or metronome through earphones (if you start recording without earphones connected, Mimu shows a reminder — check "Don't show this again" to hide it from then on).</p>
     <p><strong>When an external mic is connected</strong>: when you connect a wired external mic (earphones with a mic, a USB-C mic, etc.), Mimu shows a sheet on the recording screen asking which mic to record with (if you connect it while on another tab or with the app in the background, the sheet appears when you return to the recording screen). "Use the built-in mic" is the default, and closing the sheet also keeps the built-in mic. Choose "Use the external mic" to record with it. On the recording screen, while an external mic is connected you can switch between "Built-in mic / External mic" with one tap, and the connected device's name is shown below (you can't switch while recording). If you plug or unplug a device while recording, recording stops and you can choose to "Save" or "Discard" what was recorded so far. Bluetooth earphone mics are not used for recording.</p>
     <p><strong>Tuner</strong>: tap the "Tuner" button at the top right to open it. It detects the pitch of your playing and shows it as a note name (like "C" or "E"), referenced to A = 440Hz. You can switch between digital and analog display and set the <strong>transposition</strong> here (to show written notes, e.g. +2 for B♭ instruments, +9 for E♭ instruments). Tap "Done" when you've finished tuning.</p>
-    <p><strong>Practice mode</strong>: when you pick a track in Accompaniment mode, a toggle appears — turn it on to show a waveform where you can set point A and point B, then loop that section while you practice. Drag the handles on the thick bar to move the range — Mimu remembers it for each song. You can also jump forward/back 5 seconds, or tap "Rewind" to go back to point A (or the start of the track if A isn't set).</p>
+    <p><strong>Practice mode</strong>: when you pick a track in Accompaniment mode, a toggle appears — turn it on to show a waveform where you can set point A and point B, then loop that section while you practice. Drag the handles on the thick bar to move the range — Mimu remembers it for each song. You can also jump forward/back 5 seconds, or tap "Rewind" to go back to point A (or the start of the track if A isn't set). If you clear A and keep only B, the range runs from the start of the track to B (recording uses the same range).</p>
+    <p><strong>Lyrics Search</strong>: when you pick a backing track, a "Lyrics Search" button appears next to the song title (it works with both audio files and Apple Music songs). Tap it to show web search results for "lyrics, song title, artist" right inside the recording screen — open a lyrics page to read along while you practice or record. Mimu does not provide the lyrics; it shows web search results (a short notice appears the first time you use it).</p>
+    <ul>
+      <li>Use "A−" and "A+" on the bar at the top to change the text size (75–200%). Tap "Results" to go back to the original search results, and "✕" to close Lyrics Search. Swipe right to go back to the previous page</li>
+      <li>While lyrics are shown, turn on "Practice mode" to move the playback position and use the 5-second back, play, A, B, and Rewind controls. To change the playback speed or backing mode, close Lyrics Search first</li>
+      <li>The screen stays on while Lyrics Search is open. While recording, sounds and videos on the page don't play</li>
+    </ul>
     <div class="shots">
       <figure><img src="images/shot-record-metronome-en.png" alt="Recording screen in metronome mode"><figcaption>Metronome mode</figcaption></figure>
       <figure><img src="images/shot-record-tuner-en.png" alt="Recording screen with the tuner open"><figcaption>Tuner and transposition</figcaption></figure>
       <figure><img src="images/shot-practice-loop-en.png" alt="Practice mode (A-B loop) screen"><figcaption>Practice mode (A-B loop)</figcaption></figure>
+      <figure><img src="images/shot-lyrics-search-en.png" alt="Recording screen with Lyrics Search open"><figcaption>Lyrics Search</figcaption></figure>
     </div>
   </div>
 
@@ -100,12 +107,13 @@
       <li><strong>Timing correction</strong>: fine-tune the offset between the accompaniment and your recording, starting from an auto-detected value and adjusting manually in -10/-1/+1/+10 ms steps. If your performance sounds delayed, adjust toward +. Tap "Revert" to go back to the auto-detected value</li>
       <li><strong>Details</strong>: view deeper technical info, including output/input latency, manual offset, TimePitch delay, and playback rate</li>
       <li><strong>EQ</strong>: adjust low, mid, and high bands independently. If a recording sounds muffled, try lowering the low band or boosting the high band for more clarity (EQ requires Mimu Pro)</li>
-      <li><strong>Reverb</strong>: pick a type (Room/Hall/Plate) from the segmented control and adjust the intensity with the slider. You can also adjust <strong>accompaniment volume</strong> and <strong>performance volume</strong> on this screen</li>
+      <li><strong>Reverb</strong>: pick a type (Room/Hall/Plate) from the segmented control and adjust the intensity with the slider. You can also adjust <strong>backing track volume</strong> and <strong>your playing volume</strong> on this screen. Your playing volume goes up to 400% — raise it above 100% if you're buried under the backing track (above 100%, loud parts may distort)</li>
       <li>Tap "Save" to keep the take, or "Discard" to try again</li>
     </ul>
     <div class="shots">
       <figure><img src="images/shot-review-main.png" alt="Review screen with waveform and timing correction"><figcaption>Waveform comparison & timing</figcaption></figure>
       <figure><img src="images/shot-review-eq.png" alt="Review screen with reverb type selection"><figcaption>Reverb & timing</figcaption></figure>
+      <figure><img src="images/shot-review-volume-en.png" alt="Review screen (backing track and playing volume)"><figcaption>Backing and playing volume</figcaption></figure>
     </div>
   </div>
 
@@ -143,7 +151,7 @@
       <li>Tap the star on any row to mark it as a <strong>favorite</strong>, and use the star button in the navigation bar to filter to favorites only</li>
       <li>Swipe a row left to reveal "Rename," "Delete," and "Share"</li>
       <li>While a recording is playing, tap "Record With This Track" to use it as the backing track for your next recording</li>
-      <li><strong>Recordings made with Apple Music songs</strong> play back together with the original Apple Music song in the recording list, mini player, zoomed waveform, and review screen (it may take a moment to start after you tap play). Tap "With original" to switch to "My sound only." If you don't have an Apple Music subscription or the original can't be played, Mimu shows the reason and plays your own sound only</li>
+      <li><strong>Recordings made with Apple Music songs</strong> play back together with the original Apple Music song in the recording list, mini player, zoomed waveform, and review screen (it may take a moment to start after you tap play). Tap "With original" to switch to "My sound only." If you don't have an Apple Music subscription or the original can't be played, Mimu shows the reason and plays your own sound only. Use the <strong>volume button</strong> in the mini player and the zoomed waveform to adjust how loud your own sound is for each recording (50–200%; the recording file itself isn't changed)</li>
     </ul>
     <div class="shots">
       <figure><img src="images/shot-library-favorites-rename.png" alt="Favorites and rename controls"><figcaption>Favorites & rename</figcaption></figure>
@@ -157,7 +165,7 @@
     <ul>
       <li><strong>Default timing correction</strong> (0 ms by default, adjustable in -10/-1/+1/+10 ms steps). This value is applied as the starting offset for your next recording — adjustments made on the review screen are one-off and aren't saved here</li>
       <li><strong>Default reverb level</strong></li>
-      <li><strong>Default volume levels</strong> (accompaniment and performance)</li>
+      <li><strong>Default volume levels</strong> (backing track and your playing, up to 400% for your playing)</li>
       <li><strong>Default EQ settings</strong> (low, mid, and high bands, Mimu Pro only)</li>
     </ul>
     <div class="note">Use "Reset All to Default" to reset all of these at once.</div>
